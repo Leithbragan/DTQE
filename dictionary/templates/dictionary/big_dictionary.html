@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main dictionary</title>
+</head>
+<body>
+<h1>Dictionary</h1>
+<div>
+    {% for word in words %}
+{#        {{ word.word_value.first_letter}}  надо при реализации на js сделать вывол первой буквы в заглавии группы #}
+        <p><i>{{ word.word_value.word }} - {{ word.word }} - {{ word.word_value.transcription }}</i></p>
+    {% endfor %}
+
+</div>
+</body>
+</html>

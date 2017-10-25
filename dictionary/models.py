@@ -10,6 +10,7 @@ class Word(models.Model):
 
     word = models.CharField(max_length=30, verbose_name=u'слово')
     transcription = models.CharField(max_length=35, verbose_name=u'транскрипция')
+    first_letter = models.CharField(max_length=1, verbose_name=u'первая буква', default=-1)
 
     def __str__(self):
         return self.word
@@ -22,6 +23,7 @@ class Translation(models.Model):
 
     word = models.CharField(max_length=30, verbose_name=u'перевод слова')
     word_value = models.ForeignKey(Word, verbose_name=u'слово')
+    first_letter = models.CharField(max_length=1, verbose_name=u'первая буква', default=-1)
 
     def __str__(self):
         return '%s - %s' % (self.word_value, self.word)
